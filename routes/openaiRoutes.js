@@ -1,11 +1,8 @@
 const { json } = require("express");
 const express = require("express");
+const { generateImage } = require("../controllers/openaiController");
 const router = express.Router();
 
-router.get("/generate", (req, res) => {
-  res.status(200).json({
-    message: "success",
-  });
-});
+router.post("/generate", generateImage);
 
 module.exports = router;
